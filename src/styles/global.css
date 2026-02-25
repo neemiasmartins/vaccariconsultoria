@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *));
+/*@custom-variant dark (&:where(.dark, .dark *));*/
 
 @theme {
   --color-primary: #1d4ed8;
@@ -13,7 +13,7 @@
   --breakpoint-midmd: 880px;
 }
 
-:root {
+:root,html,body {
   --color-bg: 255 255 255;
   --color-box: 255 255 255;
   --box-border: 229 231 235;
@@ -22,8 +22,12 @@
   --heading-2: 31 41 55;
   --heading-3: 55 65 81;
 }
+body {
+  background-color: rgb(var(--color-bg)) !important;
+  color: rgb(var(--heading-1)) !important;
+}
 
-.dark {
+/*.dark {
   --color-bg: 3 7 18;
   --color-box: 17 24 39;
   --box-border: 243 244 246 / 0.1;
@@ -31,7 +35,7 @@
   --heading-1: 255 255 255;
   --heading-2: 243 244 246;
   --heading-3: 209 213 219;
-}
+}*/
 
 html {
   scroll-behavior: smooth;
@@ -60,4 +64,27 @@ body {
   display: flex;
 }
 
+/* forçando as cores do tema claro: */
+/* Forçar cores claras em todos os textos */
+body, h1, h2, h3, h4, h5, h6, p, a, span, li, button {
+  color: rgb(var(--heading-1)) !important;
+}
 
+/* Textos secundários */
+.text-heading-2 {
+  color: rgb(var(--heading-2)) !important;
+}
+
+.text-heading-3 {
+  color: rgb(var(--heading-3)) !important;
+}
+
+/* Cores de fundo de caixas */
+.bg-box-bg {
+  background-color: rgb(var(--color-box)) !important;
+}
+
+/* Cores de borda de caixas */
+.border-box-border {
+  border-color: rgb(var(--box-border)) !important;
+}
